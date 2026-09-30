@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ComicCraft Preview</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container wide">
+    <h1>Your Comic</h1>
+
+    {% for panel in layout %}
+    <section class="panel">
+        <h2>Panel {{ panel.panel }}: {{ panel.title }}</h2>
+
+        {% if panel.image_path %}
+            <img src="{{ panel.image_path }}" alt="Generated comic panel">
+        {% else %}
+            <div class="image-placeholder">
+                Image generation is unavailable. Add HF_API_KEY to enable it.
+            </div>
+        {% endif %}
+
+        <p class="scene"><em>{{ panel.scene_description }}</em></p>
+        <p>{{ panel.story }}</p>
+        <p class="prompt"><strong>Image Prompt:</strong> {{ panel.image_prompt }}</p>
+    </section>
+    {% endfor %}
+
+    <a class="button" href="{{ pdf_path }}" download>Download Your Comic as PDF</a>
+    <a class="secondary" href="/">Create Another Comic</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ComicCraft - AI Comic Creator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>ComicCraft</h1>
+    <p class="subtitle">Turn your idea into a 5-panel AI comic.</p>
+
+    <form action="/generate" method="post">
+        <label>Story Prompt</label>
+        <textarea name="story_prompt" placeholder="A brave fox exploring an enchanted forest..." required></textarea>
+
+        <label>Main Character Name</label>
+        <input name="character_name" placeholder="Finn" required>
+
+        <label>Setting</label>
+        <select name="setting">
+            <option>Forest</option>
+            <option>School</option>
+            <option>City</option>
+            <option>Space</option>
+            <option>Fantasy Kingdom</option>
+        </select>
+
+        <label>Story Tone</label>
+        <select name="tone">
+            <option>Light-hearted</option>
+            <option>Dramatic</option>
+            <option>Funny</option>
+            <option>Poetic</option>
+        </select>
+
+        <label>Art Style</label>
+        <select name="art_style">
+            <option>Comic book</option>
+            <option>Anime</option>
+            <option>Pixel art</option>
+            <option>Realistic</option>
+        </select>
+
+        <button type="submit">Create My Comic</button>
+    </form>
+</div>
+</body>
+</html>
